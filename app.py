@@ -4,7 +4,7 @@ import pickle
 
 st.set_page_config(page_title="Heart Disease Prediction", page_icon="❤️")
 st.title("Heart Disease Prediction")
-st.write("Enter the four numeric features used by the trained model.")
+st.write("Enter the four features used by the trained model.")
 
 @st.cache_resource
 def load_model():
