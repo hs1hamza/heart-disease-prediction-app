@@ -16,7 +16,8 @@ model = load_model()
 cp = st.selectbox("Chest pain type (cp)", [0, 1, 2, 3])
 ca = st.selectbox("Number of major vessels (ca)", [0, 1, 2, 3, 4])
 oldpeak = st.number_input("Oldpeak", min_value=0.0, max_value=10.0, value=0.0, step=0.1)
-sex = st.selectbox("Gender(Male:0 , Female:1)", [0, 1])
+gender = st.selectbox("Gender", ["Male", "Female"])
+sex = 0 if gender == "Male" else 1
 
 if st.button("Predict"):
     user_data = pd.DataFrame([[cp, ca, oldpeak, sex]],
